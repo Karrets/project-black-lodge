@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjffejxvcmcob"]
+
+[ext_resource type="Script" uid="uid://daiujtqxekajo" path="res://world/WorldLoader.cs" id="1_f3sb7"]
+[ext_resource type="Material" uid="uid://blq8t2tadu6il" path="res://world/ground.material" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://2267qxka8nn3" path="res://world/enviroments/MagicHour.res" id="1_h5o24"]
+[ext_resource type="PackedScene" uid="uid://bckhuvlj7bbf1" path="res://Player.res" id="3_tlwt5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tlwt5"]
+frequency = 0.0217
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aqk2v"]
+noise = SubResource("FastNoiseLite_tlwt5")
+
+[node name="world" type="Node3D"]
+
+[node name="Twilight" parent="." instance=ExtResource("1_h5o24")]
+
+[node name="Terrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0148554, 0.0169706, -0.0903186)
+script = ExtResource("1_f3sb7")
+NodeX = 128
+NodeZ = 128
+HeightScale = 7.895
+TerrainMaterial = ExtResource("1_fj7yv")
+HeightMapTexture = SubResource("NoiseTexture2D_aqk2v")
+
+[node name="Player" parent="." instance=ExtResource("3_tlwt5")]
+transform = Transform3D(-0.710726, 0, -0.703469, 0, 1, 0, 0.703469, 0, -0.710726, 5.20941, 10.7474, 8.02691)
