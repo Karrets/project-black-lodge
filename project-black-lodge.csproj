@@ -4,4 +4,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>projectblacklodge</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="addons\" />
+  </ItemGroup>
 </Project>

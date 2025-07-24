@@ -15,7 +15,6 @@ public partial class Player : CharacterBody3D
 
     public override void _Ready()
     {
-
         // Hide the mouse cursor and lock it to the game window.
         Input.MouseMode = Input.MouseModeEnum.Captured;
     }
